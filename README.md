@@ -2,7 +2,7 @@
 Implementation of Apriori algorithm and extension with PySpark.
 
 ## Description
-Apriori [(Agrawal & Srikant, 1994)](https://www.vldb.org/conf/1994/P487.PDF) is the most popular algorithm for frequent itemset mining and association rule learning in relational databases containing transactions. It allows the discovery of hidden patterns in the data that can e.g. be exploited in order to define business strategies. The classical example is the analysis of supermarket baskets, where one can uncover interesting associations between items such as `{diapers} => {beer}`. For further details, see "*Mining of Massive Datasets*" [(Chapter 6)](http://infolab.stanford.edu/~ullman/mmds/ch6.pdf) by Leskovec et al. (2020).
+Apriori [(Agrawal & Srikant, 1994)](https://www.vldb.org/conf/1994/P487.PDF) is the most popular algorithm for frequent itemset mining and association rule learning in relational databases containing transactions. It allows the discovery of hidden patterns in the data that can e.g. be exploited in order to define business strategies. The classical example is the analysis of supermarket baskets, where one can uncover interesting associations between items such as `{diapers} => {beer}`. See "*Mining of Massive Datasets*" [(Chapter 6)](http://infolab.stanford.edu/~ullman/mmds/ch6.pdf) by Leskovec et al. (2020) for further details.
 
 From the implementation point of view, an improved version of the original Apriori algorithm is used, as described by the paper:
 
