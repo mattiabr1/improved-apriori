@@ -28,7 +28,7 @@ The same applies to the Apriori Spark implementation (that does not generate the
 python apriori_spark.py -f restructured.csv -d "," -s 0.1
 ```
 
-To install the Spark APIs for Python, I relied on the instructions in the following [link](http://www.dei.unipd.it/~capri/BDC/PythonInstructions.html). 
+To install the Spark APIs for Python, I relied on the instructions in the following [link](http://www.dei.unipd.it/~capri/BDC/PythonInstructions.html).
 The latest version of Spark is not yet compatible with Python 3.8.
 
 ## Dataset

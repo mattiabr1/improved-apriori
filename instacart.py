@@ -1,18 +1,19 @@
-# Salva in un file gli insiemi frequenti e le regole associative ottenuti
-# attraverso l'applicazione dell'algoritmo A-Priori Improved al dataset instacart
-# Gli id degli item vengono convertiti negli effettivi nomi dei prodotti
-
+"""
+Save to a text file the frequent itemsets and association rules uncovered
+by applying Apriori to Instacart data
+Item IDs are converted to the actual product names
+"""
 
 import csv
 import apriori
 
 
-input_file = 'restructured.csv' # percorso al file contenente le transazioni
-delimiter = ","   # separatore utilizzato nel file contenente le transazioni
-output_file = 'instacart.txt'   # percorso al file dove salvare i risultati
+input_file = 'restructured.csv' # path of the file containing the transactions
+delimiter = ","   # delimiter used in the file containing the transactions
+output_file = 'instacart.txt'   # path of the file where to save the results
 
-file_name_items = 'products.csv' # percorso al file contenente i nomi dei
-                                # prodotti a cui corrispondono gli id degli item
+file_name_items = 'products.csv' # path of the file containing the product names
+                                 # that correspond to the item IDs
 PRODUCT = 'product_name'
 
 
@@ -22,9 +23,9 @@ min_confidence = 0.15
 
 def find_name_items(file, column, id_item):
     """
-    Ritorna il nome del prodotto che corrisponde ad un determinato id_item
+    Returns the product name that corresponds to a given id_item
 
-    Richiede in ingresso il file e la colonna in cui si trovano i nomi dei prodotti
+    Requires as input the file and the column in which the product names are located
     """
     with open(file, 'r') as fn:
         reader = csv.DictReader(fn)

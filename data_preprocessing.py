@@ -1,22 +1,23 @@
 """
-I dati contenuti in 'order_products__prior.csv' vengono rimodellati
-dal formato lungo al formato largo e salvati nel nuovo file 'restructured.csv',
-per gli obiettivi della ricerca si considera solo la variabile 'product_id'.
-In seguito, l'algoritmo A-Priori verrà applicato al dataframe ristrutturato.
+The data contained in 'order_products__prior.csv' are reshaped
+from long to wide format and saved in the new file 'restructured.csv':
+only the variable 'product_id' is considered for the aims of the research
+
+Afterwards, the Apriori algorithm will be applied to the restructured dataframe
 """
 
 import csv
 
-FI = 'order_products__prior.csv'  # percorso al file originale
-FO = 'restructured.csv'     # percorso dove salvare il nuovo file
+FI = 'order_products__prior.csv'  # path of the original file
+FO = 'restructured.csv'     # path where to save the new file
 ORDER = 'order_id'
 PRODUCT = 'product_id'
 
 
 with open(FI, 'r') as filein, open(FO, 'w') as fileout:
     """
-    Creo un dizionario che per ogni ordine(chiave) ha come valore
-    la lista di tutti gli id dei prodotti che appartengono a quell'ordine
+    Create a dictionary where each order(key) is associated with the list of
+    product IDs that belong to that order
     """
     products_by_order = {}
     for row in csv.DictReader(filein, skipinitialspace=True):
@@ -24,7 +25,7 @@ with open(FI, 'r') as filein, open(FO, 'w') as fileout:
             products_by_order[row[ORDER]] = []
         products_by_order[row[ORDER]].append(row[PRODUCT])
         print(row[ORDER])
-    # scrivo riga per riga le transazioni nel file csv di output
+    # write transactions line by line to the output csv file
     for key in products_by_order.keys():
         writer = csv.writer(fileout)
         writer.writerow(products_by_order[key])
